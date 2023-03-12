@@ -1,0 +1,140 @@
+.Parte1 {
+    background-color: #BDBDBD;
+    display: block;
+    text-align: center;
+
+    h1 {
+        font-size: 50px;
+        position: relative;
+        margin-top: -50px;
+    }
+
+    .logoPri {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+.Parte2 {
+    width: 100%;
+    height: 400px;
+    background-color: #BDBDBD;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+
+    .quadradoPlus {
+        display: flex;
+        justify-content: left;
+        width: 90%;
+        height: 10%;
+        background-color: #A89B9D;
+        margin-top: 30px;
+
+        p {
+            margin-top: 10px;
+            margin-left: 8px;
+        }
+
+        .logoPlus {
+            width: 25px;
+            height: 25px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+    }
+
+    .quadradoedit {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        margin: auto;
+        width: 90%;
+        height: 100%;
+        background-color: #A89B9D;
+        margin-top: 5px;
+
+        .quadradoCont {
+            display: flex;
+            justify-content: space-between;
+            background-color: #BDBDBD;
+            width: 98%;
+            margin: auto;
+            margin-bottom: 3px;
+            margin-top: 5px;
+            padding-bottom: 10px;
+
+            .quadradoun{
+                display: flex;
+            }
+
+            .logoPerf {
+                width: 25px;
+                height: 25px;
+                margin-left: 8px;
+                margin-top: 10px;
+            }
+
+            p {
+                margin-left: 10px;
+                margin-top: 15px;
+            }
+
+            .modal {
+                margin-right: 15px;
+
+                img {
+                    margin-left: 20px;
+                    margin-top: 8px;
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        .quadradoCont2 {
+            display: flex;
+            justify-content: space-between;
+            background-color: #BDBDBD;
+            width: 98%;
+            margin: auto;
+            margin-top: 5px;
+            padding-bottom: 10px;
+
+            .quadradoun2{
+                display: flex;
+            }
+
+            .logoPerf {
+                width: 25px;
+                height: 25px;
+                margin-left: 8px;
+                margin-top: 10px;
+            }
+
+            p {
+                margin-left: 10px;
+                margin-top: 15px;
+            }
+
+            .modal2 {
+                margin-right: 15px;
+
+                img {
+                    margin-left: 20px;
+                    margin-top: 8px;
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    
+}
+.Parte3{
+    width: 100%;
+    height: 200px;
+    background-color: #BDBDBD;
+}

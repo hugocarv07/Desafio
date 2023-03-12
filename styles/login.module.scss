@@ -1,0 +1,56 @@
+.img{
+    background-color: #BDBDBD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logoI{
+         width: 200px;
+         height: 200px;
+    }
+}
+.login {
+    background-color: #BDBDBD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+
+    .Tudo {
+        width: 30%;
+        height: 260px;
+        background-color: #A89B9D;
+        display: block;
+        text-align: center;
+        margin-bottom: 40px;
+        border-radius: 20px;
+        padding: 40px;
+
+        .Pr1 {
+            input {
+                width: 100%;
+                padding: 5px;
+                margin-top: 20px;
+            }
+        }
+
+        .Pr2 {
+            input {
+               margin-top: 30px;
+               padding: 8px;
+               width: 50%;
+            }
+        }
+        .Pr3 {
+            input {
+                margin-top: 20px;
+                padding: 6px;
+                width: 30%;
+            }
+        }
+    }
+}
+.qd{
+    background-color: #BDBDBD;
+    width: 100%;
+    height: 100px;
+}
