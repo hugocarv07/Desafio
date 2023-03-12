@@ -154,7 +154,7 @@ export default function HomeF() {
 
         <section className={styles.descricao}>
           <div className={styles.quadradoMM1}>
-            <h1>descrição da loja</h1>
+            <h1>Descrição da loja</h1>
             <p>NextGen TI é o destino perfeito para quem procura equipamentos de alta qualidade e performance para montar ou atualizar seu computador. Com uma ampla variedade de produtos, incluindo processadores, placas-mãe, placas de vídeo, memórias RAM, drives de armazenamento, fontes de energia, gabinetes e periféricos, nós oferecemos soluções personalizadas para atender às necessidades de cada cliente. Nossa equipe altamente qualificada está sempre disponível para fornecer informações e dicas sobre os melhores produtos para cada caso, garantindo a satisfação de nossos clientes. Compre em nossa loja e experimente a diferença de comprar componentes de computador com qualidade e confiança.</p>
           </div>
         </section>
