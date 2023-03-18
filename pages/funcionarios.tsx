@@ -14,13 +14,13 @@ export default function funcionarioF() {
                 </section>
 
                 <section className={styles.principal}>
-                    <CartaoFuncionario nome={'joao'} email={'ss'} aniversario={'ss'} cargo={'ss'}/>
-                    <CartaoFuncionario nome={'dd'} email={'dd'} aniversario={'dd'} cargo={'dd'}/>
-                    <CartaoFuncionario nome={'asa'} email={'asd'} aniversario={'asda'} cargo={'asdad'}/>
+                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
+                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
+                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
 
-                    <CartaoFuncionario nome={'xx'} email={'xx'} aniversario={'xx'} cargo={'xx'}/>
-                    <CartaoFuncionario nome={'rr'} email={'rr'} aniversario={'rr'} cargo={'rr'}/>
-                    <CartaoFuncionario nome={'cx'} email={'cx'} aniversario={'cx'} cargo={'xc'}/>
+                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
+                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
+                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
                 </section>
 
 
