@@ -42,99 +42,173 @@
             height: 25px;
             margin-left: 10px;
             margin-top: 5px;
+            cursor: pointer;
         }
+
     }
 
-    .quadradoedit {
-        display: flex;
-        justify-content: left;
-        flex-direction: column;
-        margin: auto;
-        width: 90%;
-        height: 100%;
-        background-color: #A89B9D;
-        margin-top: 5px;
+    .quadradoFF {
+        width: 89%;
+        align-items: center;
+        background-color: black;
+        padding: 5px;
 
-        .quadradoCont {
+        .quadradoteste {
+            width: 100%;
+            height: auto;
+            background-color: #A89B9D;
             display: flex;
-            justify-content: space-between;
-            background-color: #BDBDBD;
-            width: 98%;
-            margin: auto;
-            margin-bottom: 3px;
-            margin-top: 5px;
-            padding-bottom: 10px;
+            flex-direction: column;
 
-            .quadradoun{
+            .testeAll {
+                height: 50px;
                 display: flex;
-            }
+                justify-content: space-between;
+                align-items: center;
 
-            .logoPerf {
-                width: 25px;
-                height: 25px;
-                margin-left: 8px;
-                margin-top: 10px;
-            }
+                .teste1 {
+                    display: flex;
 
-            p {
-                margin-left: 10px;
-                margin-top: 15px;
-            }
+                    p {
+                        margin-left: 10px;
+                    }
 
-            .modal {
-                margin-right: 15px;
-
-                img {
-                    margin-left: 20px;
-                    margin-top: 8px;
-                    width: 25px;
-                    height: 25px;
+                    .logoPerf {
+                        width: 25px;
+                        height: 25px;
+                        margin-left: 10px;
+                    }
                 }
-            }
-        }
 
-        .quadradoCont2 {
-            display: flex;
-            justify-content: space-between;
-            background-color: #BDBDBD;
-            width: 98%;
-            margin: auto;
-            margin-top: 5px;
-            padding-bottom: 10px;
+                .modalUn {
+                    display: flex;
+                    margin-right: 10px;
 
-            .quadradoun2{
-                display: flex;
-            }
+                    .logoLixo {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 10px;
+                    }
 
-            .logoPerf {
-                width: 25px;
-                height: 25px;
-                margin-left: 8px;
-                margin-top: 10px;
-            }
+                    .logoEdit {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 10px;
+                    }
 
-            p {
-                margin-left: 10px;
-                margin-top: 15px;
-            }
-
-            .modal2 {
-                margin-right: 15px;
-
-                img {
-                    margin-left: 20px;
-                    margin-top: 8px;
-                    width: 25px;
-                    height: 25px;
+                    .logoVi {
+                        width: 25px;
+                        height: 25px;
+                    }
                 }
+
+
             }
         }
     }
-
-    
 }
-.Parte3{
+
+.Parte3 {
     width: 100%;
-    height: 200px;
+    height: 1600px;
     background-color: #BDBDBD;
+}
+
+////////////////////////////////////modal Adicionar///////////////////////////////////////////////////
+.modalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.modal {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal label {
+    font-weight: bold;
+}
+
+.modal input[type="text"],
+.modal input[type="email"],
+.modal input[type="number"],
+.modal input[type="date"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f7f7f7;
+    font-size: 1rem;
+}
+
+.modal button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #BDBDBD;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 5px;
+}
+
+.modal button:hover {
+    background-color: #BDBDBD;
+}
+
+.modal button[type="submit"] {
+    background-color: #BDBDBD;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #BDBDBD;
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 90%;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media screen and (max-width: 368px) {
+    .Parte1 {
+        background-color: #BDBDBD;
+        display: block;
+        text-align: center;
+
+        h1 {
+            font-size: 20px;
+            position: relative;
+            margin-top: -50px;
+        }
+
+        .logoPri {
+            width: 250px;
+            height: 250px;
+        }
+    }
 }

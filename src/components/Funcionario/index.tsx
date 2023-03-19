@@ -7,9 +7,10 @@ interface CartaoFuncionarioProps{
     email:string;
     aniversario:string;
     cargo:string;
+    salario:number;
 }
 
-export function CartaoFuncionario({ nome,email,aniversario,cargo}:CartaoFuncionarioProps) {
+export function CartaoFuncionario({ nome,email,aniversario,cargo,salario}:CartaoFuncionarioProps) {
 
     return (
         <>
@@ -24,6 +25,7 @@ export function CartaoFuncionario({ nome,email,aniversario,cargo}:CartaoFunciona
                     <p>E-mail:{email}.</p>
                     <p>Aniversário:{aniversario}. </p>
                     <p>Cargo:{cargo}.</p>
+                    <p>Salario:{salario}.</p>
                 </div>
             </div>
         </>

@@ -54,3 +54,68 @@
     width: 100%;
     height: 100px;
 }
+
+@media screen and (max-width: 600px) {
+    .img{
+        background-color: #BDBDBD;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logoI{
+             width: 200px;
+             height: 200px;
+        }
+    }
+    .login {
+        background-color: #BDBDBD;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+    
+        .Tudo {
+            width: 30%;
+            height: 260px;
+            background-color: #A89B9D;
+            display: block;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            padding: 40px;
+    
+            .Pr1 {
+                input {
+                    width: 100%;
+                    padding: 5px;
+                    margin-top: 20px;
+                }
+            }
+    
+            .Pr2 {
+                button {
+                   margin-top: 30px;
+                   padding: 8px;
+                   width: 80%;
+                   a{
+                    font-size: 10px;
+                }
+                }
+            }
+            .Pr3 {
+                button {
+                    margin-top: 20px;
+                    padding: 6px;
+                    width: 60%;
+                    a{
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .qd{
+        background-color: #BDBDBD;
+        width: 100%;
+        height: 100px;
+    }
+}

@@ -3,8 +3,20 @@ import styles from '../styles/funcionarios.module.scss'
 import Logo1 from '../public/img/NextGen_TI-so-logo.png';
 import perfil from '../public/img/perfil.png';
 import { CartaoFuncionario } from '../src/components/Funcionario'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function funcionarioF() {
+    const [listaFuncionarios, setFuncionarios] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:8000/funcionarios')
+            .then(resposta => {
+                setFuncionarios(resposta.data)
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    }, [])
     return (
         <>
             <main>
@@ -14,16 +26,17 @@ export default function funcionarioF() {
                 </section>
 
                 <section className={styles.principal}>
-                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
-                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
-                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
-
-                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
-                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
-                    <CartaoFuncionario nome={'SOPHIE'} email={'sophieganeplay@gmail.com'} aniversario={'28/02'} cargo={'estudante'}/>
+                {listaFuncionarios.map((funcionario) => (
+                        <CartaoFuncionario
+                            key={funcionario.id}
+                            nome={funcionario.name}
+                            email={funcionario.email}
+                            aniversario={funcionario.aniversario}
+                            salario={funcionario.salario}
+                            cargo={funcionario.cargo}
+                        />
+                    ))}
                 </section>
-
-
             </main>
 
         </>
