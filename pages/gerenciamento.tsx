@@ -44,15 +44,15 @@ export default function GerenciamentoF() {
         setEditModal(true);
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    const [funcionarioSelecionado, setFuncionarioSelecionado] = useState(null);
-    const [novoFuncionario, setNovoFuncionario] = useState({
+    const [Select, setSelect] = useState(null);
+    const [NewFunc, setNewFunc] = useState({
         name: "",
         email: "",
         salario: "",
         aniversario: "",
         cargo: "",
     });
-    const [listaFuncionarios, setFuncionarios] = useState([]);
+    const [Listas, setFuncionarios] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8000/funcionarios')
@@ -65,9 +65,9 @@ export default function GerenciamentoF() {
     }, [])
 
     async function deleteFuncionario() {
-        axios.delete('http://localhost:8000/funcionarios/${funcionarioSelecionado.id}')
+        axios.delete('http://localhost:8000/funcionarios/${Select.id}')
             .then(resposta => {
-                setFuncionarios(listaFuncionarios.filter(funcionario => funcionario.id !== funcionarioSelecionado.id));
+                setFuncionarios(Listas.filter(funcionario => funcionario.id !== Select.id));
                 setShowDeleteModal(false);
             })
             .catch(erro => {
@@ -75,13 +75,13 @@ export default function GerenciamentoF() {
             });
     }
 
-    const editarFuncionario = (event) => {
+    const editFun = (event) => {
         event.preventDefault();
-        axios.put('http://localhost:8000/funcionarios/${funcionarioSelecionado.id}', funcionarioSelecionado)
+        axios.put('http://localhost:8000/funcionarios/${Select.id}', Select)
             .then(() => {
-                const funcionariosAtualizados = listaFuncionarios.map((funcionario) => {
-                    if (funcionario.id === funcionarioSelecionado.id) {
-                        return funcionarioSelecionado;
+                const funcionariosAtualizados = Listas.map((funcionario) => {
+                    if (funcionario.id === Select.id) {
+                        return Select;
                     } else {
                         return funcionario;
                     }
@@ -96,10 +96,10 @@ export default function GerenciamentoF() {
 
     async function adicionarFuncionario() {
         try {
-            const resposta = await axios.post('http://localhost:8000/funcionarios', novoFuncionario);
-            setFuncionarios([...listaFuncionarios, resposta.data]);
+            const resposta = await axios.post('http://localhost:8000/funcionarios', NewFunc);
+            setFuncionarios([...Listas, resposta.data]);
             setShowModal(false);
-            setNovoFuncionario({
+            setNewFunc({
                 name: "",
                 email: "",
                 salario: "",
@@ -127,7 +127,7 @@ export default function GerenciamentoF() {
                     <div className={styles.quadradoFF}>
                         <div className={styles.quadradoteste}>
 
-                            {listaFuncionarios.map((funcionario) => (
+                            {Listas.map((funcionario) => (
                                 <>
                                     <div className={styles.testeAll}>
                                         <div className={styles.teste1}>
@@ -135,9 +135,9 @@ export default function GerenciamentoF() {
                                             <Image className={styles.logoPerf} src={LogoPerfil} alt="Logo" />
                                         </div>
                                         <div className={styles.modalUn}>
-                                            <Image className={styles.logoLixo} src={LogoLixo} alt="Logo" onClick={() => { setFuncionarioSelecionado(funcionario); setShowDeleteModal(true); }} />
-                                            <Image className={styles.logoEdit} src={LogoEdit} alt="Logo" onClick={() => { setFuncionarioSelecionado(funcionario); setEditModal(true); }} />
-                                            <Image className={styles.logoVi} src={logoVi} alt="Logo" onClick={() => { setFuncionarioSelecionado(funcionario); setVisuModal(true); }} />
+                                            <Image className={styles.logoLixo} src={LogoLixo} alt="Logo" onClick={() => { setSelect(funcionario); setShowDeleteModal(true); }} />
+                                            <Image className={styles.logoEdit} src={LogoEdit} alt="Logo" onClick={() => { setSelect(funcionario); setEditModal(true); }} />
+                                            <Image className={styles.logoVi} src={logoVi} alt="Logo" onClick={() => { setSelect(funcionario); setVisuModal(true); }} />
                                         </div>
                                     </div>
                                 </>
@@ -192,15 +192,15 @@ export default function GerenciamentoF() {
                         <h2>Visualizar funcionário</h2>
                         <form>
                             <label htmlFor="nome">Nome:</label>
-                            <p>{funcionarioSelecionado.name}</p>
+                            <p>{Select.name}</p>
                             <label htmlFor="email">E-mail:</label>
-                            <p>{funcionarioSelecionado.email}</p>
+                            <p>{Select.email}</p>
                             <label htmlFor="salario">Salário:</label>
-                            <p>{funcionarioSelecionado.salario}</p>
+                            <p>{Select.salario}</p>
                             <label htmlFor="aniversario">Aniversário:</label>
-                            <p>{funcionarioSelecionado.aniversario}</p>
+                            <p>{Select.aniversario}</p>
                             <label htmlFor="cargo">Cargo:</label>
-                            <p>{funcionarioSelecionado.cargo}</p>
+                            <p>{Select.cargo}</p>
                         </form>
                         <button onClick={() => setVisuModal(false)}>Fechar</button>
                     </div>
@@ -208,21 +208,21 @@ export default function GerenciamentoF() {
             )}
 
             {EditModal && (
-                <form onSubmit={editarFuncionario}>
+                <form onSubmit={editFun}>
                     <div className={styles.modalContainer}>
                         <div className={styles.modal}>
                             <h2>Editar funcionário</h2>
                             <form>
                                 <label htmlFor="nome">Nome:</label>
-                                <input type="text" id="nome" value={funcionarioSelecionado?.name || ''} onChange={(event) => setFuncionarioSelecionado({ ...funcionarioSelecionado, name: event.target.value })} />
+                                <input type="text" id="nome" value={Select?.name || ''} onChange={(event) => setSelect({ ...Select, name: event.target.value })} />
                                 <label htmlFor="email">E-mail:</label>
-                                <input type="email" id="email" value={funcionarioSelecionado?.email || ''} onChange={(event) => setFuncionarioSelecionado({ ...funcionarioSelecionado, email: event.target.value })} />
+                                <input type="email" id="email" value={Select?.email || ''} onChange={(event) => setSelect({ ...Select, email: event.target.value })} />
                                 <label htmlFor="salario">Salário:</label>
-                                <input type="number" id="salario" value={funcionarioSelecionado?.salario || ''} onChange={(event) => setFuncionarioSelecionado({ ...funcionarioSelecionado, salario: event.target.value })} />
+                                <input type="number" id="salario" value={Select?.salario || ''} onChange={(event) => setSelect({ ...Select, salario: event.target.value })} />
                                 <label htmlFor="aniversario">Aniversário:</label>
-                                <input type="text" id="aniversario" value={funcionarioSelecionado?.aniversario || ''} onChange={(event) => setFuncionarioSelecionado({ ...funcionarioSelecionado, aniversario: event.target.value })} />
+                                <input type="text" id="aniversario" value={Select?.aniversario || ''} onChange={(event) => setSelect({ ...Select, aniversario: event.target.value })} />
                                 <label htmlFor="cargo">Cargo:</label>
-                                <input type="text" id="cargo" value={funcionarioSelecionado?.cargo || ''} onChange={(event) => setFuncionarioSelecionado({ ...funcionarioSelecionado, cargo: event.target.value })} />
+                                <input type="text" id="cargo" value={Select?.cargo || ''} onChange={(event) => setSelect({ ...Select, cargo: event.target.value })} />
                                 <button type="submit">Editar</button>
                             </form>
                             <button onClick={() => setEditModal(false)}>Fechar</button>
